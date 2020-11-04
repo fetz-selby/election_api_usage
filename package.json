@@ -1,0 +1,16 @@
+{
+  "name": "election_api_usage",
+  "version": "1.0.0",
+  "description": "simple election api usage",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "selby",
+  "license": "ISC",
+  "dependencies": {
+    "@feathersjs/client": "^4.5.9",
+    "socket.io-client": "^2.3.1"
+  }
+}

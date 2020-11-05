@@ -2,7 +2,7 @@ const io = require("socket.io-client");
 const feathers = require("@feathersjs/client");
 
 // Set the year and region id, region id 1 is Ashanti Region
-const [year, regionId, constituencyId, candidateType] = ['2016', '1', '2585', 'M'];
+const [year, regionId] = ['2016', '1'];
 
 // Host address
 const host = 'http://127.0.0.1:5002';
@@ -20,7 +20,7 @@ getParties = async() =>
     await service.service("parties").find();
 
 getCandidates = async() =>
-    await service.service("candidates_ui").find({ query: { year, constituencyId, candidateType } });
+    await service.service("candidates").find({ query: { year, regionId } });
 
 getRegions = async() =>
     await service.service("regions").find();
@@ -29,7 +29,7 @@ getNationalAnalysis = async() =>
     await service.service("national_analysis").find({ query: { year } });
 
 getRegionalAnalysis = async() =>
-    await servic.service("regional_analysis_ui").find({ query: { year, regionId , candidateType} });
+    await service.service("regional_analysis").find({ query: { year, regionId } });
 
 getSeat = async() =>
     await service.service("constituency_seats").find({ query: { year, regionId } });
@@ -61,7 +61,7 @@ async function create() {
     // Get get seats won
     const seatsWon = await getSeat();
 
-    // console.log('constituencies, ', constituencies);
+    console.log('constituencies, ', constituencies);
     // console.log('parties, ', parties);
     // console.log('candidates, ', candidates);
     // console.log('regions, ', regions);

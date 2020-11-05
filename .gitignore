@@ -1,0 +1,12 @@
+.DS_STORE
+*.log
+*.iml
+node_modules/
+coverage/
+elm-stuff/
+.eslintcache
+*-result.tap
+*.sw*
+.env
+.idea
+.vscode
